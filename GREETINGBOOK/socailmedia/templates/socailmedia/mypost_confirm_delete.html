@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<main class="p-5" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<div class="row">
+	<div class="col-sm-6 offset-sm-3">
+	<h1 class="myhead2">R u sure!</h1>
+		<hr>
+		<form enctype="multipart/form-data" method="post">
+		{% csrf_token %}
+		{{form | crispy}}
+			<input class="btn btn-danger mx-2 my-3" type="submit" /><span><a href="/socailmedia" class="btn btn-dark">Back</a></span>
+		</form>
+
+	
+	</div>
+</div>
+</main>
+{% endblock %}
